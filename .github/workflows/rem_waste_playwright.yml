@@ -51,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: "REM/UI Tests/output_files/""
+          path: "REM/UI Tests/output_files/"
