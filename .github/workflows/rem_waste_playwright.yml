@@ -14,11 +14,14 @@ jobs:
     timeout-minutes: 10
     defaults:
       run:
-        working-directory: "REM/UI Tests"
+        working-directory: "UI Tests"
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: See structure
+        run: ls -R
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
