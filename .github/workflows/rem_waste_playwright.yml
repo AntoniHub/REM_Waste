@@ -1,0 +1,54 @@
+name: REM Waste | Playwright Tests
+
+on:
+  workflow_dispatch:
+  schedule:
+    # (CEST / UTC+2) → 01:00 UTC
+    - cron: '0 1 * * 1-5'
+    # (CEST / UTC+2) → 13:00 UTC
+    - cron: '0 13 * * 1-5'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: "REM/UI Tests"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: ASCII Art ^.^
+        run: |
+          sudo apt-get update && sudo apt-get install -y figlet
+          figlet "Antonio Rodriguez"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test
+
+      - name: Upload test results on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: "REM/UI Tests/playwright-report/""
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: "REM/UI Tests/output_files/""

@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "name": "Updated Item",
+      "completed": true,
+      "id": "1"
+    },
+    {
+      "id": "ca12",
+      "name": "Test Item",
+      "completed": false
+    },
+    {
+      "id": "58ac"
+    },
+    {
+      "id": "a37b",
+      "name": "Test Item",
+      "completed": false
+    },
+    {
+      "id": "bed9"
+    },
+    {
+      "id": "6328",
+      "name": "Test Item",
+      "completed": false
+    },
+    {
+      "id": "8790"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "antonio",
+      "password": "rem_waste"
+    }
+  ]
+}
