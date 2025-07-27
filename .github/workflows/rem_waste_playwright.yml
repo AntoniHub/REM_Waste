@@ -9,7 +9,7 @@ on:
     - cron: '0 13 * * 1-5'
 
 jobs:
-  test:
+  ui-test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     defaults:
