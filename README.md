@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/QA%20Engineer%20%7C%20Antonio%20Rodriguez-%23bc1224)
+
 # Playwright E2E Tests for QA Hub
 
 This project contains end-to-end (E2E) tests for the "QA Hub | Antonio Rodriguez Farias" web application, built using [Playwright](https://playwright.dev/).
